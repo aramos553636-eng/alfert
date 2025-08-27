@@ -1,0 +1,49 @@
+package hehe;
+
+import javax.swing.JOptionPane;
+
+public class Fr {
+	public static void main(String[] args) {
+// Naming
+		String archerName = JOptionPane.showInputDialog("Enter Archer's name:");
+		String saberName = JOptionPane.showInputDialog("Enter Saber's name:");
+		GameCharacter archer = new Mage(archerName);
+		GameCharacter saber = new Warrior(saberName);
+		JOptionPane.showMessageDialog(null,
+				"        ⚔️ Battle Start⚔️ \n" + "            " + archer.name + " vs " + saber.name + "\n    Players start with 100 HP!");
+// Battle loop
+		while (archer.isAlive() && saber.isAlive()) {
+// Archer's turn
+			String archerChoice = JOptionPane
+					.showInputDialog(archer.name + "'s turn! Choose Skill:\n1. Attack\n2. Special Move");
+			int enter = Integer.parseInt(archerChoice);
+			int archerDamage = 0;
+			if (enter == 1) {
+				archerDamage = archer.attack();
+			} else if (enter == 2) {
+				archerDamage = archer.specialMove();
+			}
+			saber.takeDamage(archerDamage);
+// Check if Saber is dead
+			if (!saber.isAlive())
+				break;
+// Saber's turn
+			String saberChoice = JOptionPane
+					.showInputDialog(saber.name + "'s turn! Choose Skill:\n1. Attack\n2. Special Move");
+			int enter2 = Integer.parseInt(saberChoice);
+			int saberDamage = 0;
+			if (enter2 == 1) {
+				saberDamage = saber.attack();
+			} else if (enter2 == 2) {
+				saberDamage = saber.specialMove();
+			}
+			archer.takeDamage(saberDamage);
+// Show HP after round
+			JOptionPane.showMessageDialog(null,
+					archer.name + " HP: " + archer.hp + "\n" + saber.name + " HP: " + saber.hp, "Status", JOptionPane.INFORMATION_MESSAGE);
+		}
+// Winner
+		String winner = archer.isAlive() ? archer.name : saber.name;
+		JOptionPane.showMessageDialog(null, "🎉 " + winner + " Wins the Battle!\n" + "       Congratulation🏆", "The Winner", JOptionPane.INFORMATION_MESSAGE);
+	}
+}
