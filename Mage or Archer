@@ -1,0 +1,32 @@
+package hehe;
+
+import javax.swing.JOptionPane;
+
+class Mage extends GameCharacter {
+	public Mage(String name) {
+		super(name, 25); // normal skill for Archer
+	}
+
+	@Override
+	public int attack() {
+		JOptionPane.showMessageDialog(null, name + " 体は剣で出来ている。 ( Karada wa tsurugi de dekiteiru )", "Archer Skills", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, name + " ロー・アイアス。 ( Rō aiasu )", "Archer Skills", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, name + " Casts Rho Aias! (-25 HP)", "Archer Skills", JOptionPane.INFORMATION_MESSAGE);
+		return attackDamage;
+	}
+
+	@Override
+	public int specialMove() {
+		JOptionPane.showMessageDialog(null, name + " 体は剣で出来ている。 ( Karada wa tsurugi de dekiteiru )", "Archer Skills", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, name + " 血潮は鉄で心は硝子。 ( Chishio wa tetsu de, kokoro wa GLASS )", "Archer Skills", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, name + " 幾たびの戦場を越えて不敗 ( Ikutabi no senjou wo koete fuhai )", "Archer Skills", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, name + " ただの一度の敗走もなく ( Tada no ichido no haisou mo naku)", "Archer Skills", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, name + " ただの一度の勝利もなし。 ( Tada no ichido no shouri mo nashi)", "Archer Skills", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, name + " 担い手はここに孤り ( Ninai te wa koko ni hitori )", "Archer Skills", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, name + " 剣の丘で鉄を鍛つ。 ( Tsurugi no oka de tetsu wo utsu )", "Archer Skills", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, name + " ならば、わが生涯に意味は不要ず。 ( Naraba, waga shougai ni imi wa irazu )", "Archer Skills", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, name + " この体は、無限の剣で出来ていた。( Kono karada wa, mugen no tsurugi de dekiteita)", "Archer Skills", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, name + " Uses Noble Phantasm! (-50 HP)", "Archer Skills", JOptionPane.INFORMATION_MESSAGE);
+		return 50; // special skill Archer
+	}
+}
