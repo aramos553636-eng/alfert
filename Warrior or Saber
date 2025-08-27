@@ -1,0 +1,30 @@
+package hehe;
+
+import javax.swing.JOptionPane;
+
+class Warrior extends GameCharacter {
+	public Warrior(String name) {
+		super(name, 25); // base attack damage for Warrior
+	}
+
+	@Override
+	public int attack() {
+		JOptionPane.showMessageDialog(null, name + " 一刀流 ｢居合！。 ( Ittō-ryū `iai! )", "Saber Skills", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, name + " ｣ 獅子歌歌！。 ( Shishi Sonson! )", "Saber Skills", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, name + " Uses Lion's Song! (-25 HP)", "Saber Skills", JOptionPane.INFORMATION_MESSAGE);
+		return attackDamage;
+	}
+
+	@Override
+	public int specialMove() {
+		JOptionPane.showMessageDialog(null, name + " 九山八海が一つの世界！。 ( Kusenhakkai ga hitotsu no sekai! )", "Saber Skills", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, name + " それが千で小千世界！。 ( Sore ga sen de shōsensekai! )", "Saber Skills", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, name + " そしてそれを集めて立方体にすれば、。 ( Soshite sore o atsumete rippōtai ni sureba, )", "Saber Skills", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, name + " 斬れないものなどない！。 ( Kirenai mono nado nai! )", "Saber Skills", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, name + " 三登流扇！。 ( Santōryū Ōgi: )", "Saber Skills", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, name + " 一大・三千・!。 ( Ichi-dai sanzen! )", "Saber Skills", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, name + " 大千・世界！。 ( Dai sen Sekai! )", "Saber Skills", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, name + " Uses The Billion-Fold World Trichiliocosm! (-50 HP)", "Saber Skills", JOptionPane.INFORMATION_MESSAGE);
+		return 50; // special skill for Saber
+	}
+}
