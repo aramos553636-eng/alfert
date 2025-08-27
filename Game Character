@@ -1,0 +1,37 @@
+package hehe;
+
+import javax.swing.JOptionPane;
+
+abstract class GameCharacter {
+	String name;
+	int hp;
+	int attackDamage;
+
+	public GameCharacter(String name, int attackDamage) {
+		this.name = name;
+		this.hp = 100; // default starting HP
+		this.attackDamage = attackDamage;
+	}
+
+// Abstract methods (must be implemented by subclasses)
+	public abstract int attack();
+
+	public abstract int specialMove();
+
+// Take damage
+	public void takeDamage(int damage) {
+		hp -= damage;
+		if (hp < 0)
+			hp = 0;
+	}
+
+// Check if alive
+	public boolean isAlive() {
+		return hp > 0;
+	}
+
+// Show current HP
+	public void showStatus() {
+		JOptionPane.showMessageDialog(null, name + " HP: " + hp);
+	}
+}
